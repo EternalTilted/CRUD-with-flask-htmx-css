@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список пользователей</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='htmx.min.js') }}"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Список пользователей</h1>
+    </header>
+    <form id="create-user" hx-post="/create-user" hx-target="#users-table">
+        <input type="text" name="first_name" placeholder="Имя" required>
+        <input type="text" name="last_name" placeholder="Фамилия" required>
+        <input type="text" name="email" placeholder="Почта" required>
+        <button type="submit">Добавить пользователя</button>
+    </form>
+
+    {% include 'table.html' %}
+
+</body>
+</html>

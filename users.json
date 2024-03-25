@@ -1,0 +1,27 @@
+[
+    {
+        "first_name": "Petr",
+        "last_name": "Petrov",
+        "email": "petr@example.com"
+    },
+    {
+        "first_name": "Anna",
+        "last_name": "Annovna",
+        "email": "anna@example.com"
+    },
+    {
+        "first_name": "2",
+        "last_name": "2",
+        "email": "2"
+    },
+    {
+        "first_name": "123",
+        "last_name": "3",
+        "email": "32"
+    },
+    {
+        "first_name": "213213",
+        "last_name": "2",
+        "email": "ivan"
+    }
+]

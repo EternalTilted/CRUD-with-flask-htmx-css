@@ -1,0 +1,28 @@
+{% for message in get_flashed_messages() %}
+<div class="flash">{{ message }}</div>
+{% endfor %}
+
+<table id="users-table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Почта</th>
+                <th>Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr id="row_{{ loop.index }}" >
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+
+                    <td>
+                        <button hx-delete="delete-user/{{ user.email }}" hx-target="#users-table" hx-confirm="Вы уверены?" >Удалить</button>
+                        <button hx-post="/edit_row/{{ loop.index - 1 }}" hx-target="#row_{{ loop.index }}" hx-swap="outerHTML">Обновить</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+</table>

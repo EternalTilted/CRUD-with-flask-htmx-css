@@ -1,0 +1,9 @@
+<tr id="row_{{ data['id'] }}">
+    <form hx-post="/update-user" hx-target="#users-table">
+        <td><input type="text" name="first_name" value="{{ data['first_name'] }}"></td>
+        <td><input type="text" name="last_name" value="{{ data['last_name'] }}"></td>
+        <td>{{ data['email'] }}</td>
+        <input type="hidden" name="email" value="{{ data['email'] }}">
+        <td><button>Подтвердить</button></td>
+    </form>
+</tr>
